@@ -251,6 +251,94 @@ Automated pipelines run linting, tests, and build verification on every pull req
 
 ---
 
+## Election Results Visualization {#election-viz}
+
+<section class="election-section">
+  <p class="election-section__lead">
+    Explore Uganda's presidential election results from 1996 through 2021. Toggle between vote totals and percentage shares, compare candidates across elections, and interact with dynamic charts featuring colors inspired by the Ugandan flag.
+  </p>
+
+  <div class="election-dashboard">
+    <aside class="election-dashboard__sidebar" aria-label="Election controls and candidates">
+      <div>
+        <h3>Configure View</h3>
+        <p>Select an election year and toggle the metric display.</p>
+      </div>
+
+      <div class="election-field">
+        <label class="election-field__label" for="election-select">Election Year</label>
+        <select id="election-select" class="election-select" aria-label="Select election year">
+          <option>Loading elections...</option>
+        </select>
+      </div>
+
+      <button 
+        type="button" 
+        id="metric-toggle" 
+        class="metric-toggle"
+        aria-pressed="false"
+        aria-label="Toggle between votes and percentages">
+        <span class="metric-toggle__text">
+          <span class="metric-toggle__label">Display Mode</span>
+          <span id="metric-toggle-label" class="metric-toggle__value">Votes</span>
+        </span>
+        <span class="metric-toggle__indicator">
+          <span class="metric-toggle__knob"></span>
+        </span>
+      </button>
+
+      <div class="candidate-list__heading">
+        <h4>Candidates</h4>
+        <p>Click or hover to highlight</p>
+      </div>
+
+      <ul id="candidate-list" class="candidate-list" role="list" aria-label="Candidate results">
+      </ul>
+
+      <div id="visual-status" class="visual-status" role="status" aria-live="polite" aria-atomic="true"></div>
+    </aside>
+
+    <div class="election-dashboard__charts">
+      <div class="chart-grid">
+        <article class="chart-card">
+          <header class="chart-card__header">
+            <h3 class="chart-card__title">Bar Chart</h3>
+            <span class="chart-card__meta" aria-hidden="true">📊</span>
+          </header>
+          <p class="chart-card__description">Compare vote totals or percentages side by side</p>
+          <div class="chart-card__body">
+            <canvas id="election-bar-chart" role="img" aria-label="Bar chart showing election results"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <header class="chart-card__header">
+            <h3 class="chart-card__title">Pie Chart</h3>
+            <span class="chart-card__meta" aria-hidden="true">🥧</span>
+          </header>
+          <p class="chart-card__description">Visualize vote share distribution</p>
+          <div class="chart-card__body chart-card__body--square">
+            <canvas id="election-pie-chart" role="img" aria-label="Pie chart showing vote distribution"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card chart-card--wide">
+          <header class="chart-card__header">
+            <h3 class="chart-card__title">Trend Line Chart</h3>
+            <span class="chart-card__meta" aria-hidden="true">📈</span>
+          </header>
+          <p class="chart-card__description">Track candidate performance across multiple elections</p>
+          <div class="chart-card__body chart-card__body--wide">
+            <canvas id="election-line-chart" role="img" aria-label="Line chart showing voting trends over time"></canvas>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+---
+
 ## Contributing
 
 1. Fork the repository.
