@@ -1,0 +1,14 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect width="1200" height="400" fill="url(#gradient)"/>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <text x="120" y="220" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="#f8fafc">Insight Trends Dashboard</text>
+  <text x="120" y="300" font-family="Inter, sans-serif" font-size="28" fill="#94a3b8">Share-ready analytics • Accessible controls • Export as PNG/PDF</text>
+  <rect x="120" y="490" width="960" height="60" stroke="#94a3b8" stroke-width="2" fill="none" rx="8"/>
+  <text x="140" y="532" font-family="Inter, sans-serif" font-size="26" fill="#f8fafc">📊 Interactive KPI Dashboard with Timeline Playback</text>
+</svg>

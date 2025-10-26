@@ -1,1 +1,9 @@
+title: Insight Trends Dashboard
+description: Interactive KPI dashboard with exportable visualizations and accessibility-first controls.
+author: Insight Engineering Team
 theme: jekyll-theme-cayman
+url: https://example.com
+baseurl: ""
+permalink: pretty
+timezone: UTC
+google_sheet_url: 

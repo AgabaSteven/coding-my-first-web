@@ -1,0 +1,51 @@
+{
+  "name": "insight-trends-dashboard",
+  "version": "1.0.0",
+  "description": "Interactive KPI dashboard with exportable visualizations and accessibility-first controls",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec jekyll serve --livereload",
+    "build": "npm run lint && npm test && bundle exec jekyll build",
+    "lint": "eslint 'assets/js/**/*.js' --max-warnings=0",
+    "lint:fix": "eslint 'assets/js/**/*.js' --fix",
+    "format": "prettier --write 'assets/**/*.{js,css}'",
+    "format:check": "prettier --check 'assets/**/*.{js,css}'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgabaSteven/coding-my-first-web.git"
+  },
+  "keywords": [
+    "dashboard",
+    "analytics",
+    "kpi",
+    "accessibility",
+    "export",
+    "charts",
+    "visualization"
+  ],
+  "author": "Insight Engineering Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AgabaSteven/coding-my-first-web/issues"
+  },
+  "homepage": "https://github.com/AgabaSteven/coding-my-first-web#readme",
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.2.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
