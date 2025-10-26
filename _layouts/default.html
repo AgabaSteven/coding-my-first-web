@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    <meta name="author" content="{{ site.author }}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml" />
+    <meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}" />
+    <meta property="og:description" content="{{ page.og_description | default: page.description | default: site.description }}" />
+    <meta property="og:type" content="{{ page.og_type | default: 'website' }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:image" content="{{ page.og_image | default: '/assets/social-share.png' | absolute_url }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ page.twitter_title | default: page.title | default: site.title }}" />
+    <meta name="twitter:description" content="{{ page.twitter_description | default: page.description | default: site.description }}" />
+    <meta name="twitter:image" content="{{ page.twitter_image | default: '/assets/social-share.png' | absolute_url }}" />
+    <meta name="theme-color" content="#0f172a" />
+    {% assign google_sheet_url = site.env.GOOGLE_SHEETS_URL | default: site.google_sheet_url | default: page.google_sheet_url %}
+    {% if google_sheet_url %}
+    <meta name="dashboard-google-sheet-url" content="{{ google_sheet_url }}" />
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <div class="brand" role="presentation">
+          <span class="brand__mark" aria-hidden="true">📊</span>
+          <div class="brand__copy">
+            <p class="brand__title">{{ site.title }}</p>
+            <p class="brand__subtitle">{{ site.description }}</p>
+          </div>
+        </div>
+        <nav aria-label="Primary navigation">
+          <ul class="nav-list">
+            <li><a href="#insights-overview">Overview</a></li>
+            <li><a href="#visualization-area">Visualizations</a></li>
+            <li><a href="#playback">Timeline</a></li>
+            <li><a href="#deployment">Deployment</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content" class="main-content">
+      {{ content }}
+    </main>
+    <footer class="site-footer" id="deployment">
+      <div class="container site-footer__inner">
+        <div class="footer-column">
+          <h2 class="footer-heading">About</h2>
+          <p class="footer-text">
+            {{ site.title }} centralizes product analytics, accessibility highlights, and export-ready visuals to help teams share insights effortlessly.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h2 class="footer-heading">Contact</h2>
+          <p class="footer-text">
+            Questions or feedback? Email
+            <a href="mailto:data@insightdash.dev">data@insightdash.dev</a> or follow our
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn updates</a>.
+          </p>
+          <p class="footer-text">Latest refresh: {{ site.time | date: '%B %d, %Y' }}.</p>
+        </div>
+        <div class="footer-column">
+          <h2 class="footer-heading">Resources</h2>
+          <ul class="footer-links">
+            <li><a href="#export-tools">Export toolkit</a></li>
+            <li><a href="#playback">Keyboard timeline controls</a></li>
+            <li><a href="#deployment-notes">Deployment notes</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__meta">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. All rights reserved.</p>
+      </div>
+    </footer>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" integrity="sha384-UomqKgJo0vvArkH5AO9M/dwZ0pniS3pSke1Mt2rt7NmBGG99nmCaTKty+O+kO5RA" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js" integrity="sha384-uaLSeDsICoZ6irMIXja+6JGZveHFkNjEcNWef39/C4R2tQeM+c/fi91tIbp/BK+f" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" integrity="sha384-7vEAv8EMXwqyI51Onx5O20nQ2YSmWvd9FTJMcjsBvny30mAE4fcAclW713N4QG1G" crossorigin="anonymous"></script>
+    <script defer src="{{ '/assets/js/dataFormatter.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/dashboard.js' | relative_url }}"></script>
+  </body>
+</html>
