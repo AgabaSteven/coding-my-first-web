@@ -1,0 +1,79 @@
+@page {
+  size: A4;
+  margin: 20mm;
+}
+
+html, body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 12pt;
+  line-height: 1.6;
+  color: #111;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 1.2em 0 0.4em;
+}
+
+h1 { font-size: 24pt; }
+h2 { font-size: 18pt; }
+h3 { font-size: 14pt; }
+h4 { font-size: 12pt; font-weight: 600; }
+
+p, ul, ol, blockquote, table {
+  margin: 0.6em 0;
+}
+
+ul, ol {
+  padding-left: 1.2em;
+}
+
+blockquote {
+  margin: 1em 0;
+  padding: 0.8em 1em;
+  border-left: 4px solid #334155;
+  background: #f8fafc;
+  color: #334155;
+  font-style: italic;
+}
+
+code, pre {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+pre {
+  background: #f1f5f9;
+  padding: 0.8em;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11pt;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 0.5em 0.6em;
+}
+
+th {
+  background: #e2e8f0;
+  text-align: left;
+}
+
+td {
+  vertical-align: top;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #cbd5e1;
+  margin: 1.5em 0;
+}
+
+/* Avoid breaking headings and blockquotes across pages */
+h1, h2, h3, h4, blockquote, table { page-break-inside: avoid; }
