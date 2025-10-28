@@ -1,0 +1,46 @@
+name: Generate PDF - Foundations of Grace
+
+on:
+  push:
+    paths:
+      - 'docs/grace-foundations.md'
+      - '.github/workflows/pdf-foundations-of-grace.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Ensure output directory exists
+        run: mkdir -p assets/pdfs
+
+      - name: Convert Markdown to PDF
+        run: |
+          npx --yes md-to-pdf@^5 docs/grace-foundations.md assets/pdfs/foundations-of-grace.pdf \
+            --pdf-options '{"format":"A4","margin":"20mm"}' \
+            --stylesheet docs/pdf.css \
+            --basedir .
+
+      - name: Commit and push PDF if changed
+        run: |
+          CHANGES=$(git status --porcelain=1 assets/pdfs/foundations-of-grace.pdf)
+          if [ -n "$CHANGES" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add assets/pdfs/foundations-of-grace.pdf
+            git commit -m "chore: update Foundations of Grace PDF"
+            git push
+          else
+            echo "No changes to commit."
+          fi

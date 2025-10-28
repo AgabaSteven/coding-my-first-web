@@ -20,6 +20,11 @@ Use this dashboard to monitor key performance indicators, track time-based trend
 - **Accessible Controls**: All buttons include ARIA labels and visual tooltips for assistive technologies.
 - **Responsive Design**: Adapts to desktop, tablet, and mobile viewports.
 
+## Foundations of Grace {#foundations-of-grace}
+
+- Read the page: [Foundations of Grace](/foundations-of-grace/)
+- Download PDF: [Foundations of Grace (PDF)](/assets/pdfs/foundations-of-grace.pdf)
+
 ---
 
 ## Interactive Visualization Area {#visualization-area}
