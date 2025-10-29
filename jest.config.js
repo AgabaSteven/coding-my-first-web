@@ -1,13 +1,21 @@
 module.exports = {
   testEnvironment: 'jsdom',
-  collectCoverageFrom: ['assets/js/**/*.js', '!assets/js/**/*.test.js'],
-  testMatch: ['**/__tests__/**/*.js', '**/?(*.)+(spec|test).js'],
+  collectCoverageFrom: [
+    'assets/js/**/*.js',
+    '!assets/js/**/*.test.js',
+    'framer/code/**/*.{ts,tsx}',
+    '!framer/code/**/*.test.{ts,tsx}'
+  ],
+  testMatch: ['**/__tests__/**/*.{js,ts,tsx}', '**/?(*.)+(spec|test).{js,ts,tsx}'],
   transform: {
-    '^.+\\.js$': ['babel-jest', { configFile: './babel.config.js' }]
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { configFile: './babel.config.js' }]
   },
-  moduleFileExtensions: ['js', 'json'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
   testPathIgnorePatterns: ['/node_modules/', '/_site/', '/.jekyll-cache/'],
-  setupFilesAfterEnv: []
+  setupFilesAfterEnv: [],
+  moduleNameMapper: {
+    '^three$': '<rootDir>/node_modules/three'
+  }
 };
