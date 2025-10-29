@@ -141,6 +141,18 @@ https://sheets.googleapis.com/v4/spreadsheets/YOUR_SHEET_ID/values/Dashboard!A1:
 - Skip link, high-contrast colour palette, and focus outlines for keyboard users.
 - Keyboard shortcuts (<kbd>Space</kbd>, <kbd>←</kbd>, <kbd>→</kbd>) with matching tooltips.
 
+## 🎨 Framer Components
+
+This repository also includes a production-ready **Product3DViewer** component for Framer. While the main project serves as a Jekyll-based analytics dashboard, the Framer component provides an independent 3D product visualization experience with configurable camera, lighting, and material controls.
+
+### Quick Start
+
+- **Documentation**: See [`framer/README.md`](framer/README.md) for full setup, Framer import instructions, property control reference, and example configurations.
+- **Prerequisites**: Node.js 18+, npm 9+, and a Framer account (Starter plan or higher recommended).
+- **Integration**: The Framer component and Jekyll dashboard coexist in this repository but are deployed separately. The dashboard builds with `npm run build` and outputs to `_site/`, while the Framer component is imported into Framer projects via GitHub integration.
+
+The Framer component does not require Ruby or Jekyll to function. If you only need the 3D viewer, install the JavaScript tooling with `npm install` and follow the [import workflow](framer/README.md#importing-into-framer) to bring the component into your Framer canvas.
+
 ## 📄 License
 
 MIT © Insight Engineering Team
